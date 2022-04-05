@@ -1,0 +1,10 @@
+version: "3.5"
+
+services:
+  web:
+    image: 143.110.149.81:5000/stackdemo
+    build: .
+    ports:
+      - "8000:8000"
+  redis:
+    image: redis:alpine
