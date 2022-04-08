@@ -22,5 +22,5 @@
       - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
       - ssh-keyscan -H $SSH_SERVER_IP >> ~/.ssh/known_hosts
       - chmod 600 ~/.ssh/known_hosts
-      - ssh ${SSH_USER}@${SSH_SERVER_IP} 'bash -s'
+      - ssh ${SSH_USER}@${SSH_SERVER_IP} 'bash -s' < ./deploy.sh
         
