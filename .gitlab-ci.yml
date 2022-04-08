@@ -22,15 +22,5 @@
       - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
       - ssh-keyscan -H $SSH_SERVER_IP >> ~/.ssh/known_hosts
       - chmod 600 ~/.ssh/known_hosts
-      - >
-        ssh ${SSH_USER}@${SSH_SERVER_IP}
-        "sudo docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY};
-        mkdir -p ${PATH_TO_PROJECT};
-        cd ${PATH_TO_PROJECT};
-        git clone https://gitlab.com/xzhoang/pythonapp.git;
-        echo $(hostname);
-        echo $(pwd);
-        sudo docker-compose down;
-        sudo docker pull ${CI_REGISTRY_IMAGE}:latest;
-        sudo docker-compose up -d;
-        sudo docker image prune -f;"
+      - ssh ${SSH_USER}@${SSH_SERVER_IP} 'bash -s'
+        
