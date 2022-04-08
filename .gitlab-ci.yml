@@ -25,7 +25,9 @@
       - >
         ssh ${SSH_USER}@${SSH_SERVER_IP}
         "sudo docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY};
+        mkdir -p ${PATH_TO_PROJECT};
         cd ${PATH_TO_PROJECT};
+        git clone https://gitlab.com/xzhoang/pythonapp.git;
         echo $(hostname);
         sudo docker-compose down;
         sudo docker pull ${CI_REGISTRY_IMAGE}:latest;
