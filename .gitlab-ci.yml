@@ -29,6 +29,7 @@
         cd ${PATH_TO_PROJECT};
         git clone https://gitlab.com/xzhoang/pythonapp.git;
         echo $(hostname);
+        echo $(pwd);
         sudo docker-compose down;
         sudo docker pull ${CI_REGISTRY_IMAGE}:latest;
         sudo docker-compose up -d;
