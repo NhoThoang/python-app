@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   web:
-    image: registry.gitlab.com/xzhoang/pythonapp
+    image: registry.gitlab.com/thoang1/cicd 
     ports:
       - "8000:8000"
   redis:
