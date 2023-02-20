@@ -9,7 +9,10 @@ redis=202
 def hello():
     #count = redis.incr('hits')
     count =112
-    return 'Hello World! I have been seen {} times.\n'.format(count)
+    return 'Thế giớiThứ hai, 20/2/2023, 20:45 (GMT+7)\
+          Cố vấn An ninh Quốc gia Mỹ cho biết Washington\
+            của ông Biden đến Kiev nhằm tránh nguy cơ xung đột.\
+          {} times.\n'.format(count)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
